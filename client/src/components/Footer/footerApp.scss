@@ -1,0 +1,98 @@
+@import '../../../public/styles/variables';
+
+.footer {
+    width: 100%;
+    background-color: $PrimaryDarkColor;
+    color: $PrimaryLightColor;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .footerLine {
+        border: 0.5px solid $PrimaryLightColor;
+        width: 94vw;
+        opacity: 0.5;
+        margin: 8px 0px;
+        padding: 0px clamp(8px, 3vw, 45px);
+    }
+
+    .footer1 {
+        width: clamp(320px, 50vw, 550px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .titleFooter1 {
+            font-size: 12px;
+        }
+
+        hr {
+            border: 1px solid $PrimaryOrangeColor;
+            width: clamp(180px, 18vw, 300px);
+            opacity: 0.5;
+            margin: 8px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+            padding: 8px 0px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0;
+            padding: 8px 0px;
+        }
+
+        button {
+            margin: 8px;
+        }
+    }
+
+    .footer2 {
+        padding: 15px clamp(0px, 4vw, 50px);
+
+        .logoFooter {
+            width: clamp(120px, 18vw, 200px);
+        }
+
+        .footerInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            a {
+                text-decoration: none;
+                color: $PrimaryLightColor;
+                margin: 0;
+                cursor: pointer;
+            }
+
+            a:hover {
+                color: $PrimaryOrangeColor;
+            }
+        }
+
+        .footerLinks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            svg {
+                width: 20px;
+                height: 30px;
+                cursor: pointer;
+            }
+
+            svg:hover {
+                color: $PrimaryOrangeColor;
+            }
+        }
+    }
+}

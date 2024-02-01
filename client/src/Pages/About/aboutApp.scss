@@ -1,0 +1,12 @@
+@import '../../../public/styles/variables';
+
+.about {
+    min-height: calc(100vh - 80px);
+    padding: clamp(8px, 20vw, 60px) clamp(6px, 16vw, 400px);
+    background-color: $PrimaryDarkColor;
+    color: white;
+
+    .paragraph {
+        padding-top: 50px;
+    }
+}

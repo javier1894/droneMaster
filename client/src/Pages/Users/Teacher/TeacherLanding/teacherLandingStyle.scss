@@ -1,0 +1,517 @@
+@import "../../../../../public/styles/variables";
+
+.mainSection {
+  background-color: $PrimaryDarkColor;
+  display: flex;
+  gap: 8px;
+  padding: 4vh 5vw;
+  color: white;
+
+  //Common Styles
+  .iconContainer {
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background-color: $PrimaryDarkColor;
+    display: grid;
+    place-items: center;
+    color: $PrimaryOrangeColor;
+    font-size: 20px;
+  }
+
+  //Aside
+  .sideContent {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .teacherCard,
+    .counterCard,
+    .courseListCard,
+    .userInfoCard {
+      background-color: $CuaternaryDark;
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    //User Card
+    .teacherCard {
+      height: fit-content;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 20px;
+
+      .imgContainer {
+        width: 60px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        background-color: $PrimaryDarkColor;
+        color: $PrimaryOrangeColor;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .avatarText {
+          margin: 0;
+        }
+      }
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+
+        .name {
+          text-transform: capitalize;
+          font-size: 16px;
+        }
+
+        p {
+          margin: 0;
+          text-transform: uppercase;
+          font-size: 12px;
+          color: $TertiaryDarkColor;
+
+          .textHover:hover {
+            color: $PrimaryOrangeColor;
+          }
+        }
+      }
+
+      .editionButton {
+        color: $TertiaryDarkColor;
+        align-self: start;
+        flex-grow: 1;
+        display: flex;
+        justify-content: end;
+
+        .iconButton:hover {
+          color: $PrimaryOrangeColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    //3 Counters style
+    .counterContainer {
+      display: flex;
+      justify-content: space-between;
+
+      .counterCard {
+        width: 32%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+
+        .textContianer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+
+          .title {
+            color: $TertiaryDarkColor;
+            font-size: 12px;
+            font-weight: 400;
+            text-align: center;
+
+          }
+        }
+      }
+    }
+
+    //User info card
+    .userInfoCard {
+      grid-area: userInfo;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .cardTitle {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      }
+
+      .cardBody {
+          padding: 0 20px;
+          margin: auto;
+          margin-left: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          
+
+          .lineInfo {
+              display: flex;
+              align-items: end;
+              gap: 10px;
+
+              p {
+                  margin: 0;
+                  align-self: end;
+              }
+              .noInfoText{
+                  font-style: italic;
+                  color: $TertiaryDarkColor;
+              }
+
+              .infoIcon {
+                  color: $PrimaryOrangeColor;
+              }
+          }
+      }
+    }
+
+
+  }
+
+  //Main
+  .mainContainer {
+    width: calc(70% - 8px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .coursesTableCard,
+    .studentsTableCard {
+      display: flex;
+      flex-direction: column;
+      background-color: $CuaternaryDark;
+      border-radius: 12px;
+      padding: 18px;
+      color: white;
+      gap: 12px;
+
+      .cardTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 12px;
+
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          min-width: 200px;
+
+          .titleText {
+            margin: 0;
+          }
+        }
+
+        .searchBar {
+          max-width: 300px;
+          min-width: 250px;
+          border-radius: 20px;
+          border: 2px solid $PrimaryOrangeColor;
+          padding: 0 10px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            color: white;
+          }
+
+          input:focus {
+            border: none;
+            outline: none;
+          }
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cardTitle {
+          flex-direction: column;
+          padding: 0;
+          gap: 10px;
+
+        }
+      }
+
+      .cardBody {
+        width: 100%;
+        padding: 0 2vw;
+
+        .coursesTable {
+          width: 100%;
+
+          thead {
+            color: $TertiaryDarkColor;
+            border-bottom: 1px solid $TertiaryDarkColor;
+
+            th {
+              font-weight: 400;
+              text-align: start;
+            }
+
+            @media (max-width: 768px) {
+              .headIcon {
+                margin: auto;
+              }
+            }
+          }
+
+          tbody {
+            width: 100%;
+
+            tr {
+              width: 100%;
+              border-bottom: 1px solid $TertiaryDarkColor;
+              height: 50px;
+
+              .tdImg {
+                .tableImg {
+                  margin: auto;
+                  height: 25px;
+                  width: 25px;
+                  background-color: $PrimaryOrangeColor;
+                  border-radius: 5px;
+                  display: grid;
+                  place-items: center;
+
+                  h6 {
+                    margin: 0;
+                  }
+                }
+              }
+
+              td {
+                text-align: center;
+
+                .tableCell {
+                  display: flex;
+                  align-items: center;
+                  justify-content: start;
+                  gap: 5px;
+
+                  .tableCellContent {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+
+                    .icon {
+                      color: $PrimaryOrangeColor;
+                      font-size: 20px;
+                    }
+                  }
+                }
+
+                @media (max-width: 768px) {
+                  .iconCell {
+                    justify-content: center;
+                    padding: 5px;
+                  }
+                }
+              }
+
+              .tableCellName {
+                text-align: start;
+                padding: 0 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Media Tablet
+@media (max-width: 1200px) {
+  .mainSection {
+    flex-direction: column;
+
+    .sideContent {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "teacherCard userInfo"
+        "counter userInfo";
+      grid-template-rows: 1fr auto;
+
+      .teacherCard {
+        height: 100%;
+      }
+
+      .counterContainer {
+        gap: 8px;
+        height: 100%;
+
+        .counterCard {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .mainContainer {
+      width: 100%;
+    }
+  }
+}
+
+//Media Tablet Vertical
+@media (max-width: 768px) {
+  .mainSection {
+    flex-direction: column;
+
+    .sideContent {
+      width: 100%;
+      display: grid;
+      grid-template:
+        "teacherCard counter"
+        "userInfo userInfo";
+
+      .counterContainer {
+        gap: 8px;
+        height: 100%;
+
+        .counterCard {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .mainContainer {
+      width: 100%;
+    }
+  }
+}
+
+.mainSectionOneCourse {
+  background-color: $PrimaryDarkColor;
+  display: flex;
+  gap: 8px;
+  padding: 4vh 5vw;
+  color: white;
+
+  .allUnitsLessonCard {
+    display: flex;
+    flex-direction: column;
+    background-color: $CuaternaryDark;
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    gap: 12px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 12px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .titleText {
+          margin: 0;
+        }
+      }
+    }
+
+    .listContainer {
+      padding: 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+      .listHeadline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $TertiaryDarkColor;
+
+        h6 {
+          margin: 4px;
+        }
+      }
+
+      .unitList {
+        padding: 0 12px;
+
+        .unitTitle {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid $PrimaryOrangeColor;
+
+          h6 {
+            margin: 0;
+            align-self: end;
+          }
+
+          .dropdownContainer {
+            font-size: 20px;
+          }
+        }
+
+        ul {
+          overflow: hidden;
+          margin: 0;
+
+          .listedLesson {
+            display: grid;
+
+            .lessonTitle {
+              border-bottom: 1px solid $TertiaryDarkColor;
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+
+              .resourceContainer {
+                padding: 0 16px;
+                display: flex;
+                gap: 12px;
+
+                .downloadIcon {
+                  color: #018001;
+                }
+
+                .uploadIcon {
+                  color: #007bb0;
+                }
+
+                .deleteIcon {
+                  color: #b85450;
+                }
+
+                .downloadIcon:hover,
+                .uploadIcon:hover,
+                .deleteIcon:hover {
+                  transform: scale(1.2);
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .mainSection {
+    .sideContent {
+      grid-template:
+        "teacherCard"
+        "counter"
+        "userInfo";
+    }
+  }
+}

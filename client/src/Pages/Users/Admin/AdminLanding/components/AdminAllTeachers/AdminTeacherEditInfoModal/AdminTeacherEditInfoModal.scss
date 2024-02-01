@@ -1,0 +1,278 @@
+@import "../../../../../../../../public/styles/variables";
+
+.editionTeacherModalContainer {
+  backdrop-filter: blur(4px);
+
+
+  .modalHeader,
+  .modalFooter {
+    background-color: $CuaternaryDark;
+
+  }
+  .modalEditTeacherBody {
+    background-color: #9d9d9d;
+}
+
+
+  .modalHeader {
+    padding: 12px 12px 12px 36px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+
+      .iconContainer {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: $PrimaryDarkColor;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        color: $PrimaryOrangeColor;
+      }
+
+      .titleText {
+        margin: 0;
+      }
+    }
+
+    .btn-close {
+      margin: 4px;
+      border-radius: 100%;
+      background-color: $PrimaryOrangeColor;
+      opacity: 0.8;
+    }
+
+    .btn-close:hover {
+      background-color: $PrimaryOrangeColor;
+    }
+  }
+
+  .modalEditTeacherBody {
+
+    background-color: #9d9d9d;
+
+    display: grid;
+    grid-template:
+      "inputImage inputName inputLastname"
+      "inputImage inputPassport inputPhone"
+      "inputImage inputAddress inputAddress";
+
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    place-items: center;
+    grid-gap: 10px;
+
+    .inputName {
+      grid-area: inputName;
+    }
+
+    .inputLastname {
+      grid-area: inputLastname;
+    }
+
+    .inputPassport {
+      grid-area: inputPassport;
+    }
+
+    .inputPhone {
+      grid-area: inputPhone;
+    }
+
+    .inputAddress {
+      grid-area: inputAddress;
+    }
+
+    .inputName,
+    .inputLastname,
+    .inputPassport,
+    .inputPhone,
+    .inputAddress {
+      padding: 0 8px;
+      width: 100%;
+    }
+
+    .imgGridContainer {
+      grid-area: inputImage;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .imgContainer {
+        position: relative;
+
+        width: 120px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $PrimaryDarkColor;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 100%;
+          object-position: center;
+        }
+
+        .defaultImg {
+          position: relative;
+
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 100%;
+
+          .defaultText {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $PrimaryOrangeColor;
+
+          }
+        }
+
+        .deleteImgButton {
+          display: none;
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          aspect-ratio: 1/1;
+          padding: 4px;
+          background-color: red;
+          color: white;
+        }
+
+        .deleteImgButton:hover {
+          background-color: rgb(128, 3, 3);
+        }
+      }
+
+      .imgContainer:hover {
+        .defaultImg {
+          .defaultText {
+            display: flex;
+          }
+        }
+
+        .deleteImgButton {
+          display: flex;
+        }
+      }
+
+      input[type="file"].inputFile {
+        display: none;
+      }
+    }
+
+    .inputImageLabel {
+      width: 150px;
+      background-color: transparent;
+      text-align: center;
+      font-size: small;
+      padding: 4px;
+      border: 2px solid $PrimaryOrangeColor;
+      font-weight: 400;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+
+    .inputImageLabel:hover {
+      color: black;
+    }
+
+    .input1 {
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 0.181);
+      padding: 0 20px;
+      border: 2px solid $PrimaryDarkColor;
+
+    }
+
+    .input1:focus {
+      background-color: rgba(82, 82, 82, 0.181);
+      outline: none;
+      border: 2px solid $PrimaryOrangeColor;
+
+
+    }
+  }
+
+  .modalFooter {
+    justify-content: space-evenly;
+
+    .btnNormal {
+      padding: 6px;
+      width: 150px;
+      border: 2px solid $PrimaryOrangeColor;
+      color: black;
+    }
+
+    .btnNormal:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .btnOutline1 {
+      padding: 6px;
+      width: 150px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .editionModalContainer {
+    .modalBody {
+      grid-template:
+
+        "inputImage inputName "
+        "inputImage inputLastname"
+        "inputImage  inputPassport"
+        "inputImage inputPhone"
+        "inputAddress  inputAddress";
+
+      .imgGridContainer {
+        .imgContainer {
+          .deleteImgButton {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .editionModalContainer {
+    .modalBody {
+      grid-template:
+        "inputImage"
+        " inputName "
+        "inputLastname"
+        " inputPassport"
+        "inputPhone"
+        " inputAddress"
+        "inputAddress";
+
+    }
+  }
+}
+
+input[type="file"].inputFileExam {
+  display: none;
+}

@@ -1,0 +1,564 @@
+@import "../../../../../public/styles/variables";
+
+.lessonInfoMainSection {
+  background-color: $PrimaryDarkColor;
+  width: 100%;
+  padding: 4vh 6vw;
+  color: white;
+  display: grid;
+  grid-template-areas:
+    "CourseTitle CourseTitle"
+    "video unitsList"
+    "video resource"
+    "video comments"
+    "description comments"
+    "none comments";
+  grid-template-columns: 70% 30%;
+  grid-template-rows: auto auto auto auto auto 0fr;
+
+  // Lesson title
+  .courseNameCard {
+    grid-area: CourseTitle;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid $PrimaryOrangeColor;
+    padding: 0 18px;
+    color: white;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 12px;
+
+      .title {
+        display: flex;
+        align-items: end;
+        gap: 20px;
+
+        .iconContainer {
+          font-size: 40px;
+          color: $PrimaryOrangeColor;
+        }
+        .titleText {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  //Image or Video
+  .introMultimedia {
+    grid-area: video;
+    width: calc(100% - 8px);
+    aspect-ratio: 16/9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    iframe,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
+  }
+
+  //Text card
+  .courseTextInfoCard {
+    grid-area: description;
+    width: calc(100% - 8px);
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: $CuaternaryDark;
+    border-radius: 8px;
+    gap: 16px;
+    padding: 18px;
+    color: white;
+    margin-top: 8px;
+
+    //Description
+    .containerCourseDescription {
+      display: flex;
+      flex-direction: column;
+      padding: 0 8px;
+      .headLineDescription {
+        border-bottom: 2px solid $TertiaryDarkColor;
+        padding: 0 10px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        text-indent: 20px;
+      }
+      .noInfoText{
+        font-style: italic;
+        color: $TertiaryDarkColor;
+        text-indent: 0px;
+      }
+
+      .smallDescription {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        padding: 0 12px;
+      }
+      .fullDescription {
+        display: block;
+        padding: 0 12px;
+      }
+
+      .showTextButton {
+        background-color: transparent;
+        border: none;
+        color: $PrimaryOrangeColor;
+        align-self: end;
+        margin-right: 16px;
+      }
+      .showTextButton:hover {
+        filter: brightness(0.7);
+      }
+    }
+  }
+
+  // Unit list
+  .allUnitsLessonCard {
+    grid-area: unitsList;
+    display: flex;
+    flex-direction: column;
+    background-color: $CuaternaryDark;
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    gap: 12px;
+    margin-top: 8px;
+
+    .listHeadline {
+      padding: 8px 8px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      border-bottom: 2px solid $TertiaryDarkColor;
+
+      h6 {
+        margin: 0px;
+      }
+    }
+
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      padding: 0 8px 12px 8px;
+      gap: 4px;
+
+      .unitList {
+        .unitTitle {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid $PrimaryOrangeColor;
+          height: 30px;
+
+          h6 {
+            margin: 0;
+            align-self: end;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+
+          .dropdownContainer {
+            font-size: 20px;
+          }
+          .dropdownContainer:hover {
+            filter: brightness(0.7);
+            color: $PrimaryOrangeColor;
+            cursor: pointer;
+          }
+        }
+        ol {
+          overflow: hidden;
+          padding-inline-start: clamp(5px, 1vw, 20px);
+          margin: 0;
+
+          .listHeadline {
+            margin: 0;
+            margin-top: 12px;
+            padding: auto;
+          }
+
+          .listedLesson {
+            display: grid;
+            padding: 0 8px;
+
+            .lessonTitle {
+              display: flex;
+              justify-content: space-between;
+              height: 30px;
+              border-bottom: 1px solid $TertiaryDarkColor;
+              align-items: end;
+              gap: 3px;
+
+              .lessonText {
+                margin: 0;
+                align-self: end;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+              }
+              .openLessonButton {
+                background-color: transparent;
+                color: $PrimaryOrangeColor;
+                border: none;
+                align-self: end;
+                padding: 0;
+                width: 50px;
+                justify-self: end;
+              }
+            }
+            .lessonTitle:hover {
+              color: $PrimaryOrangeColor;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Coments Card
+  .commentsCard {
+    grid-area: comments;
+    overflow-y: auto;
+    background-color: $CuaternaryDark;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 20px 12px;
+    color: white;
+    gap: 12px;
+    margin-top: 8px;
+    min-height: 250px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      padding: 0px 12px;
+      gap: 12px;
+    border-bottom: 2px solid $TertiaryDarkColor;
+
+
+      .iconContainer {
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        color: $PrimaryOrangeColor;
+      }
+    }
+
+    .commentCardBody {
+      .commentInputContainer {
+        height: 120px;
+        border: 2px solid $PrimaryOrangeColor;
+        border-radius: 8px;
+        display: grid;
+        grid-template:
+          "userInfo"
+          "commentInput"
+          "buttonSend";
+
+        grid-template-rows: 30px auto 30px;
+        background-color: #333333;
+        padding: 8px;
+        padding-bottom: 0;
+        margin-top: 8px;
+
+        .userImgContainer {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 15px;
+
+          img {
+            border-radius: 100%;
+            width: 30px;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+          .avatarText {
+            background-color: $PrimaryDarkColor;
+            color: $PrimaryOrangeColor;
+            border-radius: 100%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            border: 0.5px solid $PrimaryOrangeColor;
+          }
+        }
+
+        .commentInput {
+          width: 100%;
+          align-self: end;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          color: white;
+          border-bottom: 0.5px solid $PrimaryOrangeColor;
+        }
+        .commentInput:focus {
+          box-shadow: none;
+          outline: none;
+        }
+
+        .buttonContainer {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          label {
+            height: 100%;
+            margin-bottom: 0;
+            color: $TertiaryDarkColor;
+          }
+
+          .commentButton {
+            width: 60px;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            justify-self: end;
+          }
+        }
+      }
+      // Responses
+      .commentsResponsesList {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .commentCont {
+          border-radius: 8px;
+          padding: 8px 12px;
+          background-color: #323232;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          p {
+            margin-bottom: 4px;
+          }
+
+          .commentTitle {
+            width: 100%;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px;
+
+            .userImgContainer {
+              width: 25px;
+              height: 25px;
+              border-radius: 100%;
+              border: 1px solid $PrimaryOrangeColor;
+              overflow: hidden;
+              background-color: $PrimaryDarkColor;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-fit: contain;
+              }
+              h6 {
+                color: $PrimaryOrangeColor;
+                margin: 0;
+                font-weight: 400;
+              }
+            }
+            .deleteButtonCont {
+              margin-left: auto;
+              display: grid;
+              place-items: center;
+            }
+            .deleteButtonCont:hover {
+              cursor: pointer;
+              .visible {
+                color: red;
+              }
+              .hide {
+                color: $PrimaryOrangeColor;
+              }
+            }
+          }
+
+          .responseCont {
+            margin-left: 25px;
+            border-radius: 8px;
+            padding: 8px 12px;
+            background-color: #232323;
+          }
+          .commentButton {
+            width: 60px;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            justify-self: end;
+          }
+
+          .responseButton {
+            width: fit-content;
+            background-color: transparent;
+            border: none;
+            color: $PrimaryOrangeColor;
+            border-radius: 8px;
+            align-self: end;
+          }
+        }
+      }
+
+      .noCommnetsContainer {
+        margin-top: 12px;
+        padding: 12px;
+        width: 100%;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+        color: $TertiaryDarkColor;
+
+        .noCommentsText {
+          margin: 0;
+          text-align: center;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .commentsCard::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .commentsCard::-webkit-scrollbar-thumb {
+    background-color: #7d7c7c;
+    border-radius: 5px;
+  }
+
+  .commentsCard::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  .commentsCard::-webkit-scrollbar-track {
+    background-color: $CuaternaryDark;
+    border-radius: 8px;
+  }
+
+  //Resource Download Card
+  .resourceDownloadCard {
+    grid-area: resource;
+    background-color: $CuaternaryDark;
+    margin-top: 8px;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: white;
+
+    .titleCont {
+      width: 100%;
+      border-bottom: 2px solid $TertiaryDarkColor;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h6 {
+      align-self: end;
+    }
+
+    .downloadIconCont {
+      display: flex;
+      align-items: end;
+      gap: 10px;
+
+      .dowloadText {
+        align-self: end;
+        font-weight: 300;
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .downloadIconCont:hover {
+      color: $PrimaryOrangeColor;
+      filter: brightness(0.9);
+    }
+  }
+
+  .icon {
+    font-size: 24px;
+    color: $PrimaryOrangeColor;
+  }
+  .icon2 {
+    font-size: 18px;
+    color: $PrimaryOrangeColor;
+  }
+  .icon3 {
+    font-size: 16px;
+    color: $PrimaryOrangeColor;
+  }
+}
+
+//Media XL
+@media (max-width: 1400px) {
+  .lessonInfoMainSection {
+    padding: 4vh 4vw;
+  }
+}
+
+//Media XL
+@media (max-width: 1200px) {
+  .lessonInfoMainSection {
+    grid-template-areas:
+      "CourseTitle "
+      "video"
+      "unitsList "
+      "resource "
+      "description"
+      "comments";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto;
+
+    .courseNameCard,
+    .introMultimedia,
+    .courseTextInfoCard,
+    .allUnitsLessonCard,
+    .commentsCard,
+    .resourceDownloadCard {
+      width: 100%;
+    }
+
+    .commentsCard {
+      max-height: 400px;
+    }
+  }
+}

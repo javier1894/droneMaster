@@ -1,0 +1,122 @@
+@import "../../../public/styles/variables";
+
+.courseCard {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .btnNormal {
+    height: 40px;
+    position: absolute;
+    width: 120px;
+    left: calc(115px - 60px);
+    top: calc((129.38px / 2) - 20px);
+    display: none;
+  }
+
+  .courseCardContent {
+    .coursePreviewContainer {
+      width: 220px;
+
+      .preview {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+    }
+
+    .courseCardBody {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      padding-top: 0;
+
+      .courseTitle {
+        width: 100%;
+        max-height: 64px;
+        border-bottom: $border-bottom;
+        text-align: start;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        h5 {
+          margin-bottom: 8px;
+        }
+      }
+
+      .tagList {
+        height: 25px;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        color: $TertiaryDarkColor;
+
+        .tag {
+          padding: 0 5px;
+          color: $TertiaryDarkColor;
+        }
+      }
+
+      .courseScore {
+        display: flex;
+        align-items: end;
+        gap: 5px;
+        font-style: italic;
+        font-size: x-large;
+
+        h5 {
+          font-size: large;
+          color: $TertiaryDarkColor;
+        }
+
+        svg {
+          width: clamp(18px, 2vw, 20px);
+        }
+
+        .ratingCounter {
+          margin-bottom: 10px;
+          font-size: small;
+          color: $TertiaryDarkColor;
+        }
+      }
+
+      .coursePriceButton {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h4 {
+          font-size: clamp(18px, 2vw, 24px);
+          margin: 0;
+        }
+
+        .currency {
+          color: $PrimaryOrangeColor;
+          font-size: medium;
+        }
+
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.courseCard:hover {
+  .btnNormal {
+    display: flex;
+    filter: none;
+    z-index: 1;
+  }
+
+  .courseCardContent {
+    filter: brightness(0.3);
+  }
+}

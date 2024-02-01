@@ -1,0 +1,514 @@
+ @import "../../../public/styles/variables";
+
+.courseInfoMainSection {
+  min-height: calc(100vh - 80px);
+  background-color: $PrimaryDarkColor;
+  gap: 8px;
+  padding: 4vh 6vw;
+  color: white;
+  display: grid;
+  grid-template-areas:
+    "CourseTitle CourseTitle"
+    "mainSide rightAsideSection";
+  grid-template-columns: 7fr auto;
+
+  // Course title
+  .courseNameCard {
+    grid-area: CourseTitle;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-bottom: 3px solid $PrimaryOrangeColor;
+    padding: 0 18px;
+    color: white;
+    gap: 12px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 12px;
+
+      .title {
+        display: flex;
+        align-items: end;
+        gap: 20px;
+
+        .iconContainer {
+          font-size: 40px;
+          color: $PrimaryOrangeColor;
+        }
+
+        .titleText {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  //Main Side Container
+  .mainSide {
+    grid-area: mainSide;
+    width: 100%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+    //Image or video
+    .introMultimedia {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-top: 15px;
+
+      img {
+        border-radius: 8px;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.7);
+      }
+
+      .watermarkImg {
+        position: absolute;
+        object-fit: contain;
+        object-position: center;
+        padding: 100px;
+        filter: brightness(1);
+      }
+    }
+
+    //Course content
+    .courseTextInfoCard {
+      display: flex;
+      flex-direction: column;
+      background-color: $CuaternaryDark;
+      border-radius: 8px;
+      gap: 16px;
+      padding: 18px;
+      color: white;
+
+      //Dropdown List
+      .allUnitsLessonCard {
+        display: flex;
+        flex-direction: column;
+        background-color: $CuaternaryDark;
+        border-radius: 12px;
+        padding: 0 8px;
+        color: white;
+        gap: 12px;
+
+        .cardTitle {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: 12px;
+
+          .title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .titleText {
+              margin: 0;
+            }
+          }
+        }
+
+        .listContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+
+          .listHeadline {
+            padding: 0 8px;
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            border-bottom: 2px solid $TertiaryDarkColor;
+
+            h6 {
+              margin: 0px;
+            }
+          }
+
+          @media (max-width: 576px) {
+            .listHeadline {
+              flex-direction: column;
+              align-items: center;
+              margin-bottom: 4px;
+            }
+          }
+
+          .unitList {
+            padding: 0 12px;
+
+            .unitTitle {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid $PrimaryOrangeColor;
+              height: 30px;
+
+              h6 {
+                margin: 0;
+                align-self: end;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+              }
+
+              .dropdownContainer {
+                font-size: 20px;
+              }
+
+              .dropdownContainer:hover {
+                filter: brightness(0.7);
+                color: $PrimaryOrangeColor;
+                cursor: pointer;
+              }
+            }
+
+            ol {
+              overflow: hidden;
+              padding-inline-start: clamp(10px, 2vw, 40px);
+              margin: 0;
+
+              .listHeadline {
+                margin: 0;
+                margin-top: 12px;
+                padding: auto;
+              }
+
+              .listedLesson {
+                display: grid;
+                padding: 0 8px;
+
+                .lessonTitle {
+                  border-bottom: 1px solid $TertiaryDarkColor;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: end;
+
+                  .lessonText {
+                    width: calc(100% - 104px);
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                  }
+
+                  .openLessonButton {
+                    background-color: transparent;
+                    border: none;
+                    color: $PrimaryOrangeColor;
+                  }
+
+                  .openLessonButton:active {
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //Description container
+      .containerCourseDescription {
+        display: flex;
+        flex-direction: column;
+        padding: 0 8px;
+
+        .headLineDescription {
+          border-bottom: 2px solid $TertiaryDarkColor;
+          padding: 0 10px;
+          margin-bottom: 12px;
+        }
+
+        p {
+          text-indent: 20px;
+        }
+
+        .smallDescription {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          padding: 0 12px;
+        }
+
+        .fullDescription {
+          display: block;
+          padding: 0 12px;
+        }
+
+        .showTextButton {
+          background-color: transparent;
+          border: none;
+          color: $PrimaryOrangeColor;
+          align-self: end;
+          margin-right: 16px;
+        }
+
+        .showTextButton:hover {
+          filter: brightness(0.7);
+        }
+      }
+    }
+  }
+
+  //Aside
+  .rightAsideSection {
+    grid-area: rightAsideSection;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+    
+    .courseMultimediaInfoCard {
+      min-width: 300px;
+      max-width: 400px;
+      position: sticky;
+      top: 15px;
+      display: flex;
+      flex-direction: column;
+      background-color: $CuaternaryDark;
+      border-radius: 8px;
+      color: white;
+      gap: 8px;
+
+      // Card image
+      .courseImgContainer {
+        img {
+          width: 100%;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border: 2px solid $CuaternaryDark;
+          border-radius: 8px 8px 0 0;
+        }
+      }
+
+      // Main card content
+      .courseDataContent {
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px 16px 16px;
+
+        .courseTitle {
+          border-bottom: 1px solid $TertiaryDarkColor;
+          margin: 0;
+        }
+
+        //Icon group
+        .iconInfoContainer {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          color: $PrimaryLightColor;
+
+          .iconGroup1 {
+            padding-left: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: small;
+          }
+        }
+
+        // Score and rating counter
+        .courseScore {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+
+          .starsRatingContainer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+              font-size: large;
+            }
+
+            h4 {
+              margin: 0;
+            }
+          }
+
+          .ratingCounter {
+            color: $TertiaryDarkColor;
+            font-size: smaller;
+          }
+        }
+
+        //Tag list
+        .tagList {
+          font-size: small;
+          color: $TertiaryDarkColor;
+
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+
+          .tag {
+            margin-right: 5px;
+          }
+        }
+
+        //Price & button
+        .coursePriceButton {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          align-items: center;
+
+          h4 {
+            margin: 0;
+            align-self: start;
+
+            .currency {
+              color: $PrimaryOrangeColor;
+              font-size: medium;
+            }
+          }
+
+          button {
+            font-size: 18px;
+            margin: auto;
+            border: 1px outset black;
+            box-shadow: 0px 2px 2px 1px black;
+            border-radius: 4px;
+            padding: 8px 25px;
+          }
+
+          button:hover {
+            color: black;
+            background-color: $PrimaryOrangeColor;
+          }
+
+          button:active {
+            translate: 0 2px;
+            border-style: inset;
+          }
+        }
+      }
+    }
+
+    //Progress Bar
+    .circularProgressBar {
+      display: flex;
+      flex-direction: column;
+      background-color: $CuaternaryDark;
+      padding: 12px;
+      border-radius: 8px;
+      color: white;
+      gap: 8px;
+
+      .cardTitle {
+        display: flex;
+        align-items: center;
+        padding-right: 12px;
+        gap: 12px;
+      }
+
+      .contenedor-circular {
+        text-align: center;
+        margin: 50px auto;
+      }
+
+
+      .percentageText {
+        position: absolute;
+        top: 52%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h4 {
+          color: #e8e8e8;
+          font-size: 40px;
+          margin: 0;
+
+          span {
+            color: $PrimaryOrangeColor;
+          }
+        }
+      }
+
+      .progressDoughnut {
+        position: relative;
+        width: clamp(200px, 20vw, 250px) !important;
+        height: clamp(200px, 20vw, 250px) !important;
+      }
+
+      .legendContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .legendItem {
+        display: flex;
+        align-items: center;
+        margin: 0 15px;
+      }
+
+      .legendColor {
+        width: 20px;
+        height: 10px;
+        margin-right: 5px;
+      }
+
+      .legendLabel {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .icon {
+    font-size: 24px;
+    color: $PrimaryOrangeColor;
+  }
+
+  .icon2 {
+    font-size: 18px;
+    color: $PrimaryOrangeColor;
+  }
+
+  .icon3 {
+    font-size: 16px;
+    color: $PrimaryOrangeColor;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .courseInfoMainSection {
+    grid-template-areas:
+      "CourseTitle"
+      "rightAsideSection "
+      "mainSide";
+
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto;
+
+    .rightAsideSection {
+      width: 100%;
+      min-width: none;
+      max-width: none;
+
+      .courseMultimediaInfoCard{
+        align-self: center;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,150 @@
+@import "../../../../../../../public/styles/variables";
+
+.courseCreationModalContainer {
+  backdrop-filter: blur(4px);
+  background-color: none;
+
+  .modalHeader {
+    background-color: $CuaternaryDark;
+  }
+
+  .modalFooter {
+    background-color: $CuaternaryDark;
+  }
+
+  .modalHeader {
+    padding: 12px 12px 12px 36px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+
+      .logoImg {
+        width: 200px;
+      }
+
+      .iconContainer {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: $PrimaryDarkColor;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        color: $PrimaryOrangeColor;
+      }
+
+      .titleText {
+        margin: 0;
+      }
+    }
+
+    .btn-close {
+      margin: 4px;
+      border-radius: 100%;
+      background-color: $PrimaryOrangeColor;
+      opacity: 0.8;
+    }
+
+    .btn-close:hover {
+      background-color: $PrimaryOrangeColor;
+    }
+  }
+
+  .modalBodyCategory {
+    height: fit-content;
+    padding: 12px clamp(20px, 6vw, 40px);
+    background-color: #9d9d9d;
+    width: 100%;
+    display: grid;
+    grid-template:
+      "inputName inputName";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    place-items: center;
+    grid-gap: 6px;
+
+    .inputName {
+      grid-area: inputName;
+    }
+
+    .inputName {
+      padding: 0 8px;
+      width: 100%;
+    }
+
+    .input2 {
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 0.181);
+      padding: 0 20px;
+      border: 2px solid $PrimaryDarkColor;
+      color: $CuaternaryDark;
+    }
+
+    .input2:focus {
+      background-color: rgba(82, 82, 82, 0.181);
+      outline: none;
+      border: 2px solid $PrimaryOrangeColor;
+    }
+
+    .input2 {
+      option {
+        background-color: rgba(82, 82, 82, 0.6);
+        color: white;
+      }
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  .modalFooter {
+    justify-content: space-evenly;
+
+    .btnNormal {
+      padding: 6px;
+      width: 150px;
+      border: 2px solid $PrimaryOrangeColor;
+      color: black;
+    }
+
+    .btnNormal:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .btnOutline1 {
+      padding: 6px;
+      width: 150px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .courseCreationModalContainer {
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+}
+
+@media (max-width: 576px) {
+  .courseCreationModalContainer {
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

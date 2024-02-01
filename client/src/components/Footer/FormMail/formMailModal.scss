@@ -1,0 +1,79 @@
+@import "../../../../public/styles/variables.scss";
+
+.editionModalContainer {
+  backdrop-filter: blur(4px);
+
+  .modalHeader {
+    background-color: $CuaternaryDark;
+  }
+
+  .modalHeader {
+    padding: 12px 12px 12px 36px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+
+      .iconContainer {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: $PrimaryDarkColor;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        color: $PrimaryOrangeColor;
+      }
+
+      .titleText {
+        margin: 0;
+      }
+    }
+  }
+
+  .modalBodyMail {
+    height: fit-content;
+    background-color: #9d9d9d;
+    min-height: none;
+
+    display: grid;
+    grid-template:
+      "inputName";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    place-items: center;
+    grid-gap: 10px;
+
+    .inputName {
+      grid-area: inputName;
+    }
+
+    .inputName {
+      padding: 0 8px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .editionModalContainer {
+    .modalBody {
+      grid-template:
+        "inputName ";
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .editionModalContainer {
+    .modalBody {
+      grid-template:
+        "inputName";
+    }
+  }
+}

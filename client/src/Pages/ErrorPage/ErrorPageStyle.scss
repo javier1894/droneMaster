@@ -1,0 +1,27 @@
+@import "../../../public/styles/variables";
+
+.errorCont{
+    min-height: calc(100vh - 80px);
+    background-color: $PrimaryDarkColor;
+    color: $PrimaryOrangeColor;
+    display: grid;
+    place-items: center;
+
+    .imgCont{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+
+        .textErrorPage{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            gap: 10px;
+        }
+        
+        .errorImg{
+            width: clamp(300px, 50vw, 800px);
+        }
+    }
+}

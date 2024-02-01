@@ -1,0 +1,68 @@
+.btnOutline1 {
+  color: white;
+  border-radius: 86.5px;
+  border: 2px solid var(--primary-orange, #f7ab16);
+  padding: 0px 16px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.btnOutline2 {
+  color: white;
+  display: inline-flex;
+  padding: 6px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-orange, #f7ab16);
+  background-color: transparent;
+}
+
+.btnOutline3 {
+  color: #f7ab16;
+  font-weight: bold;
+  display: inline-flex;
+  background-color: #2b2a29;
+  padding: 6px 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-orange, #2b2a29);
+}
+
+.btnNormal {
+  font-weight: bold;
+  color: white;
+  border: 0px;
+  border-radius: 18px;
+  background: var(--primary-orange, #f7ab16);
+  display: inline-flex;
+  padding: 12px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnNormal:hover {
+  background: white;
+  color: #f7ab16;
+}
+
+.btnOutline1:hover {
+  background-color: #f7ab16;
+  color: black;
+}
+
+.btnOutline2:hover {
+  background-color: #f7ab16;
+  color: black;
+}
+
+.btnOutline3:hover {
+  background-color: #f7ab16;
+  color: black;
+}
+
+.blur {
+  filter: blur(10px);
+}

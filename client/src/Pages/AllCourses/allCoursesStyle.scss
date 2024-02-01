@@ -1,0 +1,216 @@
+@import "../../../public/styles/variables";
+
+.allCoursesContainer {
+  min-height: calc(100vh - 78px);
+  padding: clamp(8px, 4vw, 60px) clamp(0px, 4vw, 45px);
+  width: 100%;
+  background-color: $PrimaryDarkColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color: white;
+  gap: 15px;
+
+  .categoryContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    .categoryTitle {
+      width: 100%;
+      margin: 0;
+      padding: 0 2vw 0 2vw;
+      line-height: 40px;
+      display: flex;
+      gap: 8px;
+
+      .iconCat{
+        color: $PrimaryOrangeColor;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .courseCardContainerWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 4vh 0vw 2vh 0vw;
+      // background-color: $CuaternaryDark;
+      // border-radius: 10px;
+      border-top: 2px solid $PrimaryOrangeColor;
+
+      .navigationButtonContainerLeft {
+        display: flex;
+        justify-content: start;
+      }
+
+      .navigationButtonContainerRight {
+        display: flex;
+        justify-content: end;
+      }
+
+      .navigationButton {
+        height: 50px;
+        min-width: 50px;
+        font-size: 50px;
+        color: $PrimaryOrangeColor;
+        display: flex;
+        justify-content: end;
+      }
+
+      .courseCardContainer {
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 70px;
+
+        .courseCard {
+          width: 220px;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+
+          .btnNormal {
+            height: 40px;
+            position: absolute;
+            width: 120px;
+            left: calc(115px - 60px);
+            top: calc((129.38px / 2) - 20px);
+            display: none;
+          }
+
+          .courseCardContent {
+            .coursePreviewContainer {
+              width: 220px;
+
+              .preview {
+                width: 100%;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+              }
+            }
+
+            .courseCardBody {
+              display: flex;
+              flex-direction: column;
+              padding: 10px 0px;
+              padding-top: 0;
+
+              .courseTitle {
+                width: 100%;
+                padding-top: 4px;
+                border-bottom: $border-bottom;
+                text-align: start;
+              }
+
+              .tagList {
+                height: 25px;
+                width: 100%;
+                display: flex;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                color: $TertiaryDarkColor;
+
+                .tag {
+                  padding: 0 5px;
+                  color: $TertiaryDarkColor;
+                }
+              }
+
+              .dateContainer {
+                display: flex;
+                align-items: center;
+                color: $TertiaryDarkColor;
+                gap: 8px;
+
+                .icon {
+                  color: $PrimaryOrangeColor;
+                }
+              }
+
+              .courseScore {
+                display: flex;
+                align-items: end;
+                gap: 5px;
+                font-style: italic;
+                font-size: x-large;
+
+                h5 {
+                  font-size: large;
+                  color: $TertiaryDarkColor;
+                }
+
+                .ratingCounter {
+                  margin-bottom: 10px;
+                  font-size: small;
+                  color: $TertiaryDarkColor;
+                }
+              }
+
+              .coursePriceButton {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h4 {
+                  margin: 0;
+                }
+
+                .currency {
+                  color: $PrimaryOrangeColor;
+                  font-size: medium;
+                }
+
+                button {
+                  display: none;
+                }
+              }
+
+              // media-query
+              @media (max-width:768px) {
+                .coursePriceButton {
+                  button {
+                    display: flex;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .courseCard:hover {
+          .btnNormal {
+            display: flex;
+            filter: none;
+            z-index: 1;
+          }
+
+          .courseCardContent {
+            filter: brightness(0.3);
+          }
+        }
+
+        // media-query -> cardCourse hover
+        @media (max-width:768px) {
+          .courseCard:hover {
+            .btnNormal {
+              display: none;
+            }
+
+            .courseCardContent {
+              filter: brightness(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

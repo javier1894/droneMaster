@@ -1,0 +1,18 @@
+@import "../../../public/styles/variables";
+
+.starsContainer {
+  margin-bottom: 6px;
+  
+  svg {
+    stroke: black;
+    stroke-width: 0.5px;
+  }
+  .starFilled {
+    color: $PrimaryOrangeColor;
+  }
+
+  .starEmpty {
+    color: $TertiaryDarkColor;
+
+  }
+}

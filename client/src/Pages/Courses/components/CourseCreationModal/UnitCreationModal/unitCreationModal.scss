@@ -1,0 +1,149 @@
+@import "../../../../../../public/styles/variables";
+
+.unitCreationModalContainer {
+  backdrop-filter: blur(4px);
+  background-color: none;
+
+  .modalHeader {
+    background-color: $CuaternaryDark;
+  }
+
+  .modalFooter {
+    background-color: $CuaternaryDark;
+  }
+
+  .modalHeader {
+    padding: 12px 12px 12px 36px;
+
+    .cardTitle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+
+      .logoImg {
+        width: 200px;
+      }
+
+      .iconContainer {
+        width: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
+        background-color: $PrimaryDarkColor;
+        display: grid;
+        place-items: center;
+        font-size: 25px;
+        color: $PrimaryOrangeColor;
+      }
+
+      .titleText {
+        margin: 0;
+      }
+    }
+
+    .btn-close {
+      margin: 4px;
+      border-radius: 100%;
+      background-color: $PrimaryOrangeColor;
+      opacity: 0.8;
+    }
+
+    .btn-close:hover {
+      background-color: $PrimaryOrangeColor;
+    }
+  }
+
+  .modalBodyUnit {
+    height: fit-content;
+    padding: 12px clamp(20px, 6vw, 100px);
+    background-color: #9d9d9d;
+    width: 100%;
+    display: flex;
+    grid-gap: 6px;
+
+    .inputName {
+      grid-area: inputName;
+    }
+
+    .inputName {
+      padding: 0 8px;
+      width: 100%;
+    }
+
+    .inputUnit {
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+      border-style: solid;
+      background-color: rgba(255, 255, 255, 0.181);
+      padding: 0 20px;
+      border: 2px solid $PrimaryDarkColor;
+      color: $CuaternaryDark;
+    }
+
+    .inputUnit:focus {
+      background-color: rgba(82, 82, 82, 0.181);
+      outline: none;
+      border: 2px solid $PrimaryOrangeColor;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .errorMessage {
+      font-weight: bold;
+      color: $PrimaryOrangeColor;
+      padding-left: 10px;
+    }
+  }
+
+  .modalFooter {
+    justify-content: space-evenly;
+
+    .btnNormal {
+      padding: 6px;
+      width: 150px;
+      border: 2px solid $PrimaryOrangeColor;
+      color: black;
+    }
+
+    .btnNormal:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .btnOutline1 {
+      padding: 6px;
+      width: 150px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .courseCreationModalContainer {
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+
+      .tagsList {
+        height: 120px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .courseCreationModalContainer {
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+
+      .tagsList {
+        height: 120px;
+      }
+    }
+  }
+}

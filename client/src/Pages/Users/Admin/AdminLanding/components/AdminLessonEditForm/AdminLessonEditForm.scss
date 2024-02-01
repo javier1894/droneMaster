@@ -1,0 +1,181 @@
+@import "../../../../../../../public/styles/variables";
+ 
+
+.modalHeader {
+  background-color: $CuaternaryDark;
+}
+
+.modalFooter {
+  background-color: $CuaternaryDark;
+}
+
+.modalBody1{
+    background-color: #9d9d9d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input, textarea {
+        width: 100%;
+        border: 1px solid #0000009f;
+        border-radius: 16px;
+        padding: 8px;
+        background:  #9d9d9db9;
+        width: 300px;
+      }
+      
+      input:focus {
+        border: none;
+        outline: none;
+      }
+}
+
+
+
+.modalHeader {
+  padding: 12px 12px 12px 36px;
+
+  .cardTitle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+
+    .logoImg {
+      width: 200px;
+    }
+
+    .iconContainer {
+      width: 40px;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      background-color: $PrimaryDarkColor;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      color: $PrimaryOrangeColor;
+    }
+
+    .titleText {
+      margin: 0;
+    }
+  }
+
+  .btn-close {
+    margin: 4px;
+    border-radius: 100%;
+    background-color: $PrimaryOrangeColor;
+    opacity: 0.8;
+  }
+
+  .btn-close:hover {
+    background-color: $PrimaryOrangeColor;
+  }
+}
+
+.modalBodyUser {
+  height: fit-content;
+  padding: 12px clamp(20px, 6vw, 40px);
+  background-color: #9d9d9d;
+  width: 100%;
+  display: grid;
+  grid-template:
+    "inputName"
+    "inputLastName"
+    "inputEmail"
+    "inputPassword"
+    "inputType";
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  place-items: center;
+  grid-gap: 6px;
+
+  .inputName {
+    grid-area: inputName;
+  }
+
+  .inputLastName {
+    grid-area: inputLastName;
+  }
+
+  .inputEmail {
+    grid-area: inputEmail;
+  }
+
+  .inputPassword {
+    grid-area: inputPassword;
+  }
+
+  .inputType {
+    grid-area: inputType;
+  }
+
+  .inputName,
+  .inputLastName,
+  .inputEmail,
+  .inputPassword,
+  .inputType {
+    padding: 0 8px;
+    width: 100%;
+  }
+
+  .input2 {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0.181);
+    padding: 0 20px;
+    border: 2px solid $PrimaryDarkColor;
+    color: $CuaternaryDark;
+  }
+
+  .input2:focus {
+    background-color: rgba(82, 82, 82, 0.181);
+    outline: none;
+    border: 2px solid $PrimaryOrangeColor;
+  }
+
+  .input2 {
+    option {
+      background-color: rgba(82, 82, 82, 0.6);
+      color: white;
+    }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .errorMessage {
+    font-weight: bold;
+    color: $PrimaryOrangeColor;
+    padding-left: 10px;
+  }
+}
+
+.modalFooter {
+  justify-content: space-evenly;
+
+  .btnNormal {
+    padding: 6px;
+    width: 150px;
+    border: 2px solid $PrimaryOrangeColor;
+    color: black;
+  }
+
+  .btnNormal:hover {
+    background-color: transparent;
+    color: white;
+  }
+
+  .btnOutline1 {
+    padding: 6px;
+    width: 150px;
+    font-weight: bold;
+  }
+}

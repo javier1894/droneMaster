@@ -1,0 +1,31 @@
+.contenedor-circular {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.progreso {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.percentageText {
+    padding: 0;
+    position: absolute;
+    //top: calc(50% - (43.19px / 2));
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h4 {
+        color: #e8e8e8;
+        font-size: 40px;
+        margin: 0;
+    }
+}
+
+.progressDoughnut {
+    position: relative;
+    width: clamp(200px, 25vw, 250px) !important;
+    height: clamp(200px, 25vw, 250px) !important;
+
+}
